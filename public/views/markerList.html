@@ -1,0 +1,11 @@
+<div class="markerList">
+  <h3>Markers</h3>
+  <p>Click on map to add a marker</p>
+  <ul>
+    <li class="mrker" ng-repeat="m in markers">
+      {{m.name}} 
+      <span id="{{m._id}}" ng-click="removeMarker($event)">[x]</span>
+      <span id="{{m._id}}" ng-click="getNearby($event)">[Nearby]</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p.menu
+    a(href="#/") Markers
+    a(href="#/geofences") Geofences
+  div(ng-controller="MainCtrl")
+    div(ng-controller="MapCtrl")
+      google-map(center="map.center", zoom="map.zoom", draggable="true", events="map.events")
+        marker(ng-repeat="m in markers", coords="m.loc")
+    div(class='app', ng-view='')

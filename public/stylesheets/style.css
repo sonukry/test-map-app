@@ -1,0 +1,80 @@
+body {
+  padding: 50px;
+  padding-top: 0px;
+  font: 14px"Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+
+.menu {
+  margin: 10px;
+}
+
+.menu a {
+  margin-right: 10px;
+}
+
+.angular-google-map-container {
+  width: 700px;
+  height: 500px;
+  box-shadow: 0px 1px 3px black;
+  float: left;
+}
+.app {
+  float: left;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: -27px;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+/* start commented backslash hack \*/
+
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/* close commented backslash hack */
+
+
+
+.markerList ul {
+  padding-left: 0px;
+}
+
+.markerList .mrker {
+  padding: 5px 10px;
+  list-style: none;
+  transition: .3s all;
+  width: 300px;
+}
+
+.markerList .mrker:hover {
+  background: #eee;
+}
+
+.markerList .mrker span {
+  color: blue;
+  cursor: pointer;
+  float: right;
+  margin-right: 10px;
+  transition: .3s all;
+}
+
+.markerList .mrker span:hover {
+  color: red;
+  border-bottom: 1px dashed red;
+}
+
