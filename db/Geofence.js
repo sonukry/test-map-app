@@ -3,7 +3,13 @@ var GeoJSON = require('mongoose-geojson-schema');
 
 var geofenceSchema = new mongoose.Schema({
   name: String,
-  loc: GeoJSON.Polygon
+  loc: {
+    'type': {
+      type: String,
+      default: 'Polygon'
+    },
+    coordinates: []
+  }
 });
 
 geofenceSchema.index({

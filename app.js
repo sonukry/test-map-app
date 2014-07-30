@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 var apiPlace = require('./routes/apiPlace');
 var apiNearby = require('./routes/apiNearby');
+var apiGeofence = require('./routes/apiGeofence');
 
 var mongoose = require('mongoose');
 var cfg = require('./config.json');
@@ -39,6 +40,8 @@ app.post('/api/places', apiPlace.post);
 app.del('/api/places/:id', apiPlace.del);
 
 app.get('/api/nearby/:id', apiNearby.get);
+
+app.get('/api/geofences', apiGeofence.get);
 
 http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
