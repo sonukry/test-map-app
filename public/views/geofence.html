@@ -1,4 +1,9 @@
 <div class="geofence">
   <h3>Geofences</h3>
-  <p>TODO</p>
+  <ul>
+    <li class="geofence" ng-repeat="g in geofences">
+      {{g.name}}
+      <span id="{{g._id}}" ng-click="removeMarker($event)">[x]</span>
+    </li>
+  </ul>
 </div>

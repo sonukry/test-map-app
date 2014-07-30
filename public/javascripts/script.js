@@ -113,6 +113,8 @@
     };
   });
 
+  app.controller('GeofenceCtrl', function ($scope) {});
+
   // markerList controller 
   app.controller('MarkerListCtrl', function ($scope, Places) {
 
