@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -9,6 +8,10 @@ var http = require('http');
 var path = require('path');
 var apiPlace = require('./routes/apiPlace');
 var apiNearby = require('./routes/apiNearby');
+
+var mongoose = require('mongoose');
+var cfg = require('./config.json');
+mongoose.connect(cfg.mongo.url);
 
 var app = express();
 
@@ -37,6 +40,6 @@ app.del('/api/places/:id', apiPlace.del);
 
 app.get('/api/nearby/:id', apiNearby.get);
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
