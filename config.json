@@ -1,0 +1,5 @@
+{
+  "mongo": {
+    "url": "mongodb://testuser:testpassword@ds053469.mongolab.com:53469/pulsetest"
+  }
+}
