@@ -86,8 +86,8 @@
         click: function (map, evt, args) {
           var latLng = args[0].latLng;
 
-          var lat = latLng.lat();
-          var lng = latLng.lng();
+          var lat = Number(latLng.lat());
+          var lng = Number(latLng.lng());
 
           var payload = {
             name: prompt('Enter place name'),
