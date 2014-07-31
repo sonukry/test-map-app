@@ -1,6 +1,6 @@
 # Test Map App
 
-A basic app to test MongoDB Geo-Spatial queries
+A basic app to test MongoDB Geo-Spatial queries. This is a work-in-progress.
 
 [http://test-map-app.herokuapp.com](http://test-map-app.herokuapp.com)
 
