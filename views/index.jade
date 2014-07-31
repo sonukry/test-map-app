@@ -9,5 +9,5 @@ block content
     div(ng-controller="MapCtrl")
       google-map(center="map.center", zoom="map.zoom", draggable="true", events="map.events")
         marker(ng-repeat="m in markers", coords="m.loc")
-        polygon(ng-repeat="g in geofences", path="g.loc", fill="poly.fill", stroke="poly.stroke")
+        polygon(ng-repeat="g in geofences", path="g.loc", fill="poly.fill", stroke="poly.stroke", clickable="poly.clickable", events="map.events")
     div(class='app', ng-view='')

@@ -73,7 +73,8 @@
       fill: {
         color: 'skyblue',
         opacity: 0.8
-      }
+      },
+      clickable: true
     };
 
     $scope.map = {
