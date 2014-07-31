@@ -11,7 +11,7 @@ var apiNearby = require('./routes/apiNearby');
 var apiGeofence = require('./routes/apiGeofence');
 
 var mongoose = require('mongoose');
-var cfg = require('config.json');
+var cfg = require('./config.json');
 mongoose.connect(cfg.mongo.url);
 
 var app = express();
