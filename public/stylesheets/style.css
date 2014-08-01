@@ -73,3 +73,14 @@ a {
   color: red;
   border-bottom: 1px dashed red;
 }
+.mlabel {
+  color: white;
+  background-color: black;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid black;
+  white-space: nowrap;
+  padding: 5px;
+}
