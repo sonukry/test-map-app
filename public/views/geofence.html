@@ -10,6 +10,7 @@
     <li class="geofence" ng-repeat="g in geofences">
       {{g.name}}
       <span id="{{g._id}}" ng-click="removeGeofence($event)">[x]</span>
+      <span id="{{g._id}}" ng-click="getWithin($event)">[Within]</span>
     </li>
   </ul>
 </div>

@@ -9,6 +9,7 @@ var path = require('path');
 var apiPlace = require('./routes/apiPlace');
 var apiNearby = require('./routes/apiNearby');
 var apiGeofence = require('./routes/apiGeofence');
+var apiWithin = require('./routes/apiWithin');
 
 var mongoose = require('mongoose');
 var cfg = require('./config.json');
@@ -40,6 +41,7 @@ app.post('/api/places', apiPlace.post);
 app.del('/api/places/:id', apiPlace.del);
 
 app.get('/api/nearby/:id', apiNearby.get);
+app.get('/api/within/:id', apiWithin.get);
 
 app.get('/api/geofences', apiGeofence.get);
 app.post('/api/geofences', apiGeofence.post);

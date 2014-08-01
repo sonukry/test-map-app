@@ -42,6 +42,9 @@
     var url = '/api/geofences';
 
     return {
+      getWithin: function(id) {
+        return $http.get('/api/within/' + id);
+      },
       get: function () {
         return $http.get(url);
       },
@@ -184,6 +187,22 @@
         })
         .error(function () {
           console.log('DEL ERR:', id);
+        });
+    };
+    
+    $scope.getWithin = function (evt) {
+      var id = evt.target.attributes.id.value;
+
+      Geofences
+        .getWithin(id)
+        .success(function (data) {
+          var res = '';
+          for(var i = 0, l = data.length; i < l - 1; i++) {
+            res += data[i].name + ', ';
+          }
+          res += data[i].name;
+          
+          alert('Within Geofence: ' + res);
         });
     };
     
