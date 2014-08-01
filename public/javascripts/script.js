@@ -44,6 +44,12 @@
     return {
       get: function () {
         return $http.get(url);
+      },
+      post: function (data) {
+        return $http.post(url, data);
+      },
+      del: function (id) {
+        return $http.delete(url + '/' + id);
       }
     };
   });

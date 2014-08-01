@@ -30,5 +30,20 @@ module.exports = {
 
       res.end();
     });
+  },
+  del: function (req, res) {
+    var id = req.params.id;
+
+    Geofence.find({
+      _id: id
+    }).remove(function (err) {
+      if (err) {
+        res.status(500);
+      } else {
+        res.status(200);
+      }
+
+      res.end();
+    });
   }
 };
