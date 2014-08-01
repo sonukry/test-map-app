@@ -118,6 +118,8 @@
             .error(function () {
               console.log('POST ERR:', payload);
             });
+          
+          $scope.$apply();
         }
       }
     };
