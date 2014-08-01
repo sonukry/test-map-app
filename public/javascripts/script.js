@@ -120,7 +120,74 @@
     };
   });
 
-  app.controller('GeofenceCtrl', function ($scope) {});
+  app.controller('GeofenceCtrl', function ($scope, Geofences) {
+
+    $scope.geofencePoints = '';
+
+    $scope.addGeofence = function () {
+      if ($scope.geofencePoints === '') {
+        return;
+      }
+
+      var points = $scope.geofencePoints.split(',');
+
+      if (points.length < 3) {
+        alert('A geofence require minimum 3 points');
+        return;
+      }
+
+      var places = [[]];
+
+      for (var i = 0, l = points.length; i < l; i++) {
+        for (var j = 0, m = $scope.markers.length; j < m; j++) {
+          if ($scope.markers[j].name === points[i]) {
+            places[0].push($scope.markers[j].loc.coordinates);
+          }
+        }
+      }
+
+      places[0].push(places[0][0]);
+
+      var payload = {
+        name: $scope.geofencePoints,
+        loc: {
+          type: 'Polygon',
+          coordinates: places
+        }
+      };
+
+      Geofences
+        .post({
+          data: payload
+        })
+        .success(function (doc) {
+          console.log('POST SUC:', doc);
+          $scope.$parent.geofences.push(doc);
+        })
+        .error(function () {
+          console.log('POST ERR:', payload);
+        });
+
+    };
+
+    $scope.removeGeofence = function (evt) {
+      var id = evt.target.attributes.id.value;
+
+      Geofences
+        .del(id)
+        .success(function () {
+          console.log('DEL SUC:', id);
+
+          $scope.$parent.geofences = _.reject($scope.$parent.geofences, function (m) {
+            return m._id == id;
+          });
+        })
+        .error(function () {
+          console.log('DEL ERR:', id);
+        });
+    };
+    
+  });
 
   // markerList controller 
   app.controller('MarkerListCtrl', function ($scope, Places) {

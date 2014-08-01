@@ -1,9 +1,15 @@
-<div class="geofence">
+<div class="geofences">
   <h3>Geofences</h3>
+  <div>
+    <hr>Type comma-separated places
+    <input type="text" ng-model="geofencePoints">
+    <button ng-click="addGeofence()">Add Geofence</button>
+    <hr>
+  </div>
   <ul>
     <li class="geofence" ng-repeat="g in geofences">
       {{g.name}}
-      <span id="{{g._id}}" ng-click="removeMarker($event)">[x]</span>
+      <span id="{{g._id}}" ng-click="removeGeofence($event)">[x]</span>
     </li>
   </ul>
 </div>
